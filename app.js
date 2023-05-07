@@ -18,7 +18,9 @@ const server = app.listen(server_port, error=> {
 })
 const io = socket(server, { cors: true, origins: '*:*' });
 //Establising a connection with a mongoDB database to store the partyRoom Details
-const mongoDB_URL = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.wzzz8s3.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
+// const mongoDB_URL = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.wzzz8s3.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
+const mongoDB_URL = `mongodb+srv://himanshu0998:himanshu0998@cluster0.wzzz8s3.mongodb.net/cs553_watchParty?retryWrites=true&w=majority`;
+
 mongoose.connect(mongoDB_URL)
 .then(()=>{
     console.log("Connected with MongoDB database");
