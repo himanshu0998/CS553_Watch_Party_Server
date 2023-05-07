@@ -62,7 +62,7 @@ io.on('connection', socket=>{
     socket.on('vController', control_settings=>{
         //console.log("User: ",attendees[socket.id].name)
         //console.log(control_settings)
-        socket.to(control_settings.partyRoomCode).emit("updateVideoControls",{message:control_settings.message, vcontrol_time: control_settings.vcontrol_time, video_user: attendees[socket.id].name})
+        socket.to(control_settings.partyRoomCode).emit("updateVideoControls",{message:control_settings.message, vcontrol_time: control_settings.vcontrol_time, video_user: attendees[socket.id].name, control_triggered_time:control_settings.control_triggered_time, control_recvd_server: Date.now()})
     })
 
 })
